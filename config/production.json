@@ -1,6 +1,6 @@
 {
-  "port": 5000,
-  "baseUrl": "http://localhost:5000",
+  "port": 8443,
+  "baseUrl": "https://desolate-meadow-76105.herokuapp.com",
   "jwtSecret": "NadasdIasdasKasdasdIasdasTasdaA",
   "mongoUri": "mongodb+srv://nikita:1234@cluster0-termo.mongodb.net/app?retryWrites=true&w=majority"
 }

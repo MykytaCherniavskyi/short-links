@@ -4,12 +4,16 @@ const path = require('path');
 const mongoose = require('mongoose');
 
 const app = express();
-const PORT = config.get('port') || 5000;
+
+const PORT =
+    process.env.NODE_ENV === 'production'
+        ? process.env.PORT
+        : config.get('port') || 5000;
 
 app.use(express.json({ extended: true }));
 app.use('/api/auth', require('./routes/auth.route'));
 app.use('/api/link', require('./routes/link.route'));
-app.use('/t', require('./routes/redirect.route'));
+app.use('t', require('./routes/redirect.route'));
 
 if (process.env.NODE_ENV === 'production') {
     app.use('/', express.static(path.join(__dirname, 'client', 'build')));
